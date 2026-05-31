@@ -1,0 +1,12 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-font-smoothing: antialiased; }
+body { font-family: 'DM Sans', 'Segoe UI', sans-serif; background: #060c18; color: #e2e8f0; min-height: 100vh; }
+button { font-family: inherit; }
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: #080d18; }
+::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
+
+@keyframes fadeUp  { from { opacity:0; transform:translateY(10px) } to { opacity:1; transform:translateY(0) } }
+@keyframes pulse   { 0%,100%{opacity:1} 50%{opacity:.25} }
+@keyframes glow    { 0%,100%{box-shadow:0 0 8px #00ff9d33} 50%{box-shadow:0 0 22px #00ff9d66} }
+@keyframes scanbar { 0%{left:-40%} 100%{left:110%} }

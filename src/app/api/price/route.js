@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server'
 
-const TWELVE_KEY = process.env.NEXT_PUBLIC_TWELVE_KEY || '4306cdf5c57e49479290e6db405b34e2'
+const TWELVE_KEY = process.env.NEXT_PUBLIC_TWELVE_KEY || '7e593c4085544f5180d790bef8b54c9f'
 
 export async function GET(request) {
   const { searchParams } = new URL(request.url)

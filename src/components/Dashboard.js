@@ -192,7 +192,7 @@ export default function Dashboard() {
     for (const pair of PAIRS) {
       const p=await fetchPrice(pair)
       if (p) next[pair]=p
-      await sleep(250)
+      await sleep(500)
     }
     setPrices(next)
     setHist(prev=>{
@@ -212,7 +212,7 @@ export default function Dashboard() {
     const found=[]
 
     for (const pair of PAIRS) {
-      push(`Fetching price for ${pair}...`)
+      push(`Fetching price for ${pair}... (rate limit: 8s gap)`)
       const price=await fetchPrice(pair)
       if (!price){ push(`⚠ ${pair}: price unavailable`); continue }
 
@@ -224,7 +224,7 @@ export default function Dashboard() {
       if (sig){ found.push(sig); push(`✓ ${pair}: ${sig.direction} @ ${sig.confidence}% confidence`) }
       else push(`○ ${pair}: no signal (below 75% threshold)`)
 
-      await sleep(350)
+      await sleep(8000)
     }
 
     push(`─── Scan complete: ${found.length} signal(s) found ───`)
